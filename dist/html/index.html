@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>VUE DEMO</title>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link type="text/css" rel="stylesheet" href="../css/index.css"/>
+<link type="text/css" rel="stylesheet" href="../css/common.css"/>
+<script type="text/javascript" src="../js/index.js"></script>
+</head>
+<body>
+<div class="ui-wrapper ui-content" id="J-content" v-cloak>
+    <div class="name-box">
+        <div class="name-title">{{title}}</div>
+        <ul class="name-list" v-if="demoList && demoList.length>0">
+            <template v-for="demo in demoList">
+                <li @click.stop="demoClick($index)">{{demo.name}}</li>
+                <div class="demo-content " :class="showOne && $index==0 ? '':'tf-hide'">{{demo.desc}}</div>
+            </template>
+        </ul>
+    </div>
+    <div class="footer-box">
+        <div class="footer">
+            <span >{{build_author}}</span>
+            <span >{{build_date}}</span>
+            <span >{{build_desc}}</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
