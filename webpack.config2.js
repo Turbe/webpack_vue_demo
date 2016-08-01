@@ -11,11 +11,11 @@ var webpack = require("webpack"),
     ROOT_PATH = path.resolve(__dirname),
     OUT_PATH =  "./dist/";
     ALIAS_IGNORE_DIRS = [""],
-    ENTRY_IGNORE_DIRS = ["common"],
+    ENTRY_IGNORE_DIRS = ["src/js"],
     alias = require('./config/alias'),
     entry = require('./config/entry');
-alias.init(ROOT_PATH, ["./src/common", "./src/component"], ALIAS_IGNORE_DIRS);
-entry.init(ROOT_PATH, "./src", ENTRY_IGNORE_DIRS);
+alias.init(ROOT_PATH, ["/src/common", "/src/component/vue", "/src/component/css"], ALIAS_IGNORE_DIRS);
+entry.init(ROOT_PATH, "/src/js", ENTRY_IGNORE_DIRS);
 
 module.exports = {
     resolve: {
@@ -90,9 +90,9 @@ module.exports = {
         }),
         //DefinePlugin 接收字符串插入到代码当中, 可以写上 JS 的字符串或常量
         new webpack.DefinePlugin({
-            __TEST_SERVER__: false, //true：请求测试环境数据，false：请求线上环境数据
-            __COOKIE__: JSON.stringify(""), //测试cookie 22:YveSjjGMrik=  20:4uCmFZS2TXc=
-            __OPEN_LOG__: false, //true:打日志，false:关闭日志
+            BUILD_AUTHOR: JSON.stringify("Turbe"),
+            BUILD_DATE: JSON.stringify("2016/7/28"),
+            BUILD_DESC: JSON.stringify("淘粉吧——海狐海淘"),
         })
     ],
 };
