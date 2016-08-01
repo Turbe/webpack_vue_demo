@@ -1,0 +1,25 @@
+.computed-box{
+    font-size: 20px;
+    padding: 10px;
+    padding-bottom: 40px;/*等于footer的高度*/
+}
+.computed-desc{
+    font-size: 20px;
+    padding: 10px 0;
+}
+input{
+    -webkit-appearance:none;
+    border-width:0;
+　　 border-color:white;
+　　 border-style:none;
+　　 background:none;
+    outline: none;
+}
+.unit{
+    padding: 5px 0;
+}
+.unit input{
+    border: 1px solid #f5f5f5;
+    font-size: 13px;
+    padding: 4px;
+}

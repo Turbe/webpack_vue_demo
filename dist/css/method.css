@@ -1,0 +1,16 @@
+.method-box{
+    font-size: 20px;
+    padding: 10px;
+    padding-bottom: 40px;/*等于footer的高度*/
+}
+.method-name{
+    font-size: 20px;
+    padding: 10px 0;
+}
+.method-desc{
+    padding: 5px 0;
+    font-size: 16px;
+}
+.bg-color{
+    background-color: rgba(162, 234, 204, 0.8);
+}

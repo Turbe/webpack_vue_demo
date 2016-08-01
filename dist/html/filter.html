@@ -12,11 +12,20 @@
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <link type="text/css" rel="stylesheet" href="../css/common.css"/>
-<script type="text/javascript" src="../js/index.js"></script>
+<link type="text/css" rel="stylesheet" href="../css/filter.css"/>
+<script type="text/javascript" src="../js/filter.js"></script>
 </head>
 <body>
-<div class="ui-content" id="J-content" v-cloak>
-
+<div class="ui-wrapper ui-content" id="J-content" v-cloak>
+    <div class="filter-box" v-if="filterData && filterData.length>0">
+        <div class="filter-con" v-for="(index, data) in filterData">
+            <div>{{data.a}} ————> {{data.a | parseInt}}</div>
+            <div>{{data.b}} ————> {{data.b | weekDate}}</div>
+            <div>{{data.c}} ————> {{data.c | capitalize}}</div>
+            <div>{{data.d}} ————> {{{data.d | sum data.a}}}</div>
+        </div>
+    </div>
+    <footercmpt></footercmpt>
 </div>
 </body>
 </html>

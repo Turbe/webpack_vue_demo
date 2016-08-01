@@ -12,11 +12,16 @@
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <link type="text/css" rel="stylesheet" href="../css/common.css"/>
-<script type="text/javascript" src="../js/index.js"></script>
+<link type="text/css" rel="stylesheet" href="../css/class.css"/>
+<script type="text/javascript" src="../js/class.js"></script>
 </head>
 <body>
-<div class="ui-content" id="J-content" v-cloak>
-
+<div class="ui-wrapper ui-content" id="J-content" v-cloak>
+    <div class="class-box">
+        <div class="class-type" :class="bgColor" :style="{color:fontColor}" @click.stop="classStyleOne">对象语法<span>v-bind:class</span></div>
+        <div :class="['class-type', bgColor2]" :style="[styleObjectA, styleObjectB]" @click.stop="classStyleTwo">数据语法<span>v-bind:class</span></div>
+    </div>
+    <footercmpt></footercmpt>
 </div>
 </body>
 </html>

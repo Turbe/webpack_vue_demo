@@ -4,7 +4,8 @@
  * @date 2016/7/30
  *
  **/
-var Vue = require("vue");
+var Vue = require("vue"),
+    footer = require("footer");
 
 $(function(){
     var obj = new indexObj();
@@ -34,6 +35,9 @@ indexObj.prototype.vueInstance = function(){
             build_author:BUILD_AUTHOR,
             build_date:BUILD_DATE,
             build_desc:BUILD_DESC
+        },
+        components: {
+            footercmpt: footer
         },
         methods:{
             demoClick: self.demoClick

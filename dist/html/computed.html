@@ -12,11 +12,31 @@
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <link type="text/css" rel="stylesheet" href="../css/common.css"/>
-<script type="text/javascript" src="../js/index.js"></script>
+<link type="text/css" rel="stylesheet" href="../css/computed.css"/>
+<script type="text/javascript" src="../js/computed.js"></script>
 </head>
 <body>
-<div class="ui-content" id="J-content" v-cloak>
-
+<div class="ui-wrapper ui-content" id="J-content" v-cloak>
+    <div class="computed-box">
+        <div class="computed-desc">在模板中绑定表达式是非常便利的，但是它们实际上只用于简单的操作。模板是为了描述视图的结构。在模板中放入太多的逻辑会让模板过重且难以维护。这就是为什么 Vue.js 将绑定表达式限制为一个表达式。如果需要多于一个表达式的逻辑，应当使用计算属性。</div>
+        <div class="computed-example">
+            <div class="unit">
+                <label>单价：</label><input type="text" v-model="unit" placeholder="edit me">{{ unit }}
+            </div>
+            <div class="unit">
+                <label>件数：</label><input type="text" v-model="num" placeholder="edit me">{{ num }}
+            </div>
+            <div class="unit">
+                <label>邮费：</label><input type="text" v-model="postage" readonly="true" >{{ postage }}
+            </div>
+            <div class="unit">
+                <label>税费：</label><input type="text" v-model="taxes" readonly="true" >{{ taxes }}
+            </div>
+            <div class="unit" ><label>总额：</label><input type="text" v-model="sum" readonly="true" >{{ sum }}</div>
+            <div class="unit"><a href="http://cn.vuejs.org/examples/firebase.html" target="_Blank">校验例子</a> </div>
+        </div>
+    </div>
+    <footercmpt></footercmpt>
 </div>
 </body>
 </html>

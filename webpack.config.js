@@ -8,6 +8,7 @@ var webpack = require("webpack"),
     path = require("path"),
     //独立打包样式文件
     ExtractTextPlugin = require("extract-text-webpack-plugin"),
+    // vue = require("vue-loader"),
     ROOT_PATH = path.resolve(__dirname),
     OUT_PATH =  "./dist/";
 module.exports = {
@@ -22,19 +23,35 @@ module.exports = {
             md5 : path.resolve(ROOT_PATH, "./node_modules/md5/md5.js"),
             vue : path.resolve(ROOT_PATH, "./node_modules/vue/dist/vue.min.js"),
             waterfall : path.resolve(ROOT_PATH, "./node_modules/vue-waterfall/lib/vue-waterfall.min.js"),
+            dialog:path.resolve(ROOT_PATH, "./src/common/dialog.js"),
+            util:path.resolve(ROOT_PATH, "./src/common/util.js"),
+            verify:path.resolve(ROOT_PATH, "./src/common/verify.js"),
+            footer:path.resolve(ROOT_PATH, "./src/component/vue/footer.vue"),
         }
     },
     entry: {
         index: ["./src/js/index.js"],
+        method: ["./src/js/method.js"],
+        computed: ["./src/js/computed.js"],
+        class: ["./src/js/class.js"],
+        filter: ["./src/js/filter.js"],
+        reactivity: ["./src/js/reactivity.js"],
     },
     output: {
         path: OUT_PATH,
         publicPath: OUT_PATH,
         filename: 'js/[name].js'
     },
+    // vue: {
+    //     css: ExtractTextPlugin.extract("style-loader","css-loader")
+    // },
     module: {
         //模块加载器,告知 webpack 每一种文件都需要使用什么加载器来处理
         loaders: [
+            {
+                test: /\.vue$/,
+                loader: 'vue'
+            },
             {
                 test: /\.less$/,
                 loader: ( "style-loader!css-loader!less-loader")
@@ -43,9 +60,9 @@ module.exports = {
                 test: /\.css$/,
                 loader: 'style-loader!css-loader'
             },
-            {   test: /\.css$/,
-                loader: ExtractTextPlugin.extract("style-loader","css-loader")
-            },
+            // {   test: /\.css$/,
+            //     loader: ExtractTextPlugin.extract("style-loader","css-loader")
+            // },
             // {   test: /\.scss$/, loader: "style!css!sass" },
             // {   test: /\.less$/, loader: "style!css!less" },
             //图片文件使用 url-loader 来处理，小于8kb的直接转为base64
@@ -55,12 +72,8 @@ module.exports = {
             },
             {
                 test: /\.jsx?$/,
-                exclude: /(node_modules|bower_components)/,
+                exclude: /node_modules/,
                 loader: 'babel?cacheDirectory'
-            },
-            {
-                test: /\.vue$/,
-                loader: 'vue'
             },
             {
                 test: /\.html$/,
@@ -88,7 +101,7 @@ module.exports = {
         new webpack.DefinePlugin({
             BUILD_AUTHOR: JSON.stringify("Turbe"),
             BUILD_DATE: JSON.stringify("2016/7/28"),
-            BUILD_DESC: JSON.stringify("Webpack & VUE"),
+            BUILD_DESC: JSON.stringify("淘粉吧——海狐海淘"),
         })
     ],
 };

@@ -1,0 +1,39 @@
+.class-box{
+    padding: 10px;
+    padding-bottom: 40px;/*等于footer的高度*/
+}
+.class-type{
+    margin: 5px auto;
+    padding: 10px;
+    font-size: 16px;
+}
+.bg-color-0{
+    background-color: rgba(255,244,23,0.6);
+}
+.bg-color-1{
+    background-color: rgba(13,44,23,0.6);
+}
+.bg-color-2{
+    background-color: rgba(13,144,23,0.6);
+}
+.bg-color-3{
+    background-color: rgba(233,124,123,0.6);
+}
+.bg-color-4{
+    background-color: rgba(13,144,123,0.6);
+}
+.bg-color-5{
+    background-color: rgba(3,244,123,0.6);
+}
+.bg-color-6{
+    background-color: rgba(153,0,123,0.6);
+}
+.bg-color-7{
+    background-color: rgba(173,44,123,0.6);
+}
+.bg-color-8{
+    background-color: rgba(233,44,123,0.6);
+}
+.bg-color-9{
+    background-color: rgba(103,44,123,0.6);
+}

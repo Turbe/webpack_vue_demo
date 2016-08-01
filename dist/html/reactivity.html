@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>数据响应式</title>
+<title>数据响应</title>
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
@@ -12,11 +12,28 @@
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <link type="text/css" rel="stylesheet" href="../css/common.css"/>
-<script type="text/javascript" src="../js/index.js"></script>
+<link type="text/css" rel="stylesheet" href="../css/reactivity.css"/>
+<script type="text/javascript" src="../js/reactivity.js"></script>
 </head>
 <body>
-<div class="ui-content" id="J-content" v-cloak>
+<div class="ui-wrapper ui-content" id="J-content" v-cloak>
+    <div class="reactivity-box" >
+        <div class="btn-box">
+            <div class="tf-left btn reset-btn" @click.stop="resetClick">重置</div>
+            <div class="tf-left btn add-btn" @click.stop="addDataClick" v-if="dataList && dataList.length>0">增加</div>
+            <div class="tf-left btn reduce-btn" @click.stop="reduceDataClick" v-if="dataList && dataList.length>0">减少</div>
+            <div class="tf-clear"></div>
+        </div>
+        <div v-if="dataList && dataList.length>0">
+            <template v-for="(index, data) in dataList">
+                <div class="reactivity-con" :style="{background:data,borderColor:data}">
+                    <div>{{index}} ————> {{data}}</div>
+                </div>
+            </template>
+        </div>
 
+    </div>
+    <footercmpt></footercmpt>
 </div>
 </body>
 </html>

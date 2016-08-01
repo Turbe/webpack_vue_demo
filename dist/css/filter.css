@@ -1,0 +1,14 @@
+.filter-box{
+    padding: 10px;
+    padding-bottom: 50px;/*等于footer的高度*/
+}
+.filter-con{
+    margin: 2px auto;
+    padding: 10px;
+    font-size:14px;
+    background-color: #b0eef5;
+}
+.filter-con div{
+    font-size:14px;
+    padding: 4px 0;
+}

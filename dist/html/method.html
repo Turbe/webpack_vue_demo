@@ -12,11 +12,18 @@
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <link type="text/css" rel="stylesheet" href="../css/common.css"/>
-<script type="text/javascript" src="../js/index.js"></script>
+<link type="text/css" rel="stylesheet" href="../css/method.css"/>
+<script type="text/javascript" src="../js/method.js"></script>
 </head>
 <body>
-<div class="ui-content" id="J-content" v-cloak>
-
+<div class="ui-wrapper ui-content" id="J-content" v-cloak>
+    <div class="method-box">
+        <div class="method-name">用v-on指令监听DOM事件</div>
+        <div class="method-desc" :data-index="index" v-on:click="clickOne(index)">1、扫一眼 HTML 模板便能轻松定位在 JavaScript 代码里对应的方法.</div>
+        <div class="method-desc" :class="bgColor" data-click-two="this is click two" v-on:click.stop="clickTwo($event)">2、无须在 JavaScript 里手动绑定事件，ViewModel代码可以是非常纯粹的逻辑，和DOM 完全解耦，更易于测试。</div>
+        <div class="method-desc" @click.stop="clickThree($event)">3、当一个 ViewModel 被销毁时，所有的事件处理器都会自动被删除。无须担心如何清理它们。</div>
+    </div>
+    <footercmpt></footercmpt>
 </div>
 </body>
 </html>
